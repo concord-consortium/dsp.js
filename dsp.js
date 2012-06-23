@@ -337,7 +337,8 @@ DFT.prototype.forward = function(buffer) {
     imag[k] = ival;
   }
 
-  return this.calculateSpectrum();
+  this.calculateSpectrum();
+  return this.spectrum;
 };
 
 
@@ -450,7 +451,8 @@ FFT.prototype.forward = function(buffer) {
     halfSize = halfSize << 1;
   }
 
-  return this.calculateSpectrum();
+  this.calculateSpectrum();
+  return this.spectrum;
 };
 
 FFT.prototype.inverse = function(real, imag) {
